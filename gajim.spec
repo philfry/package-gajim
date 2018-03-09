@@ -2,13 +2,13 @@
 %define gitrev %{name}_1.0
 
 Name: gajim
-Version: 0.99.2.1
+Version: 1.0.0
 Release: 0.1%{?dist}
 Summary: a jabber/xmpp client
 Group: Applications/Internet
 License: GPLv3
 URL: https://gajim.org/
-Source0: %{name}-%{version}.tar.xz
+Source0: https://dev.gajim.org/gajim/gajim/repository/%{gitrev}/archive.tar.bz2
 BuildArch: noarch
 BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
@@ -25,7 +25,7 @@ Requires: python3 >= 3.4
 Requires: python3-gobject-base
 Requires: python3-gobject
 Requires: gtk3
-Requires: python3-nbxmpp
+Requires: python3-nbxmpp >= 0.6.3
 Requires: python3-pyOpenSSL >= 0.14
 Requires: python3-pyasn1
 Requires: python3-pillow
@@ -36,7 +36,7 @@ Requires: python-avahi
 Requires: gspell
 Requires: hunspell
 Requires: libsecret
-Requires: python3-dbus bindings >= 1.2.0
+Requires: python3-dbus >= 1.2.0
 Requires: telepathy-farstream >= 0.2
 Requires: gstreamer
 Requires: gstreamer-plugins-base
@@ -46,7 +46,7 @@ Requires: NetworkManager-glib
 Requires: NetworkManager-libnm
 Requires: geoclue2-libs
 Requires: python3-idna
-Requires: python3-precis-i18n
+Requires: python3-precis_i18n
 
 
 %description
@@ -56,7 +56,8 @@ Gajim does not require GNOME to run, even though it exists with it nicely.
 
 
 %prep
-%setup -q
+# for testing purpose only
+%setup -q -n gajim-gajim_1.0-7cac6432217cc90db75affa055069d19e25b75b4
 
 
 %build
@@ -76,14 +77,12 @@ hardlink -vv %{buildroot}%{_bindir}
 
 %post
 touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
-exit 0
 
 
 %postun
 [ $1 -eq 0 ] || exit 0
 touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
 gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
-exit 0
 
 
 %posttrans
