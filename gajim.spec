@@ -88,7 +88,6 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 %defattr(-,root,root,-)
 %{!?_licensedir:%global license %%doc}
 %license COPYING
-%doc ChangeLog
 %{_bindir}/%{name}
 %{_bindir}/%{name}-history-manager
 %{_bindir}/%{name}-remote
