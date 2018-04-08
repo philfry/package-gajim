@@ -1,14 +1,11 @@
-%define gitrepo https://dev.gajim.org/%{name}/%{name}.git
-%define gitrev %{name}_1.0
-
 Name: gajim
-Version: 1.0.0
-Release: 0.1%{?dist}
+Version: 1.0.1
+Release: 1%{?dist}
 Summary: a jabber/xmpp client
 Group: Applications/Internet
 License: GPLv3
 URL: https://gajim.org/
-Source0: https://dev.gajim.org/gajim/gajim/repository/%{gitrev}/archive.tar.bz2
+Source0: https://gajim.org/downloads/1.0/%{name}-%{version}.tar.bz2
 BuildArch: noarch
 BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
@@ -56,8 +53,7 @@ Gajim does not require GNOME to run, even though it exists with it nicely.
 
 
 %prep
-# for testing purpose only
-%setup -q -n gajim-gajim_1.0-7cac6432217cc90db75affa055069d19e25b75b4
+%setup -q
 
 
 %build
@@ -109,5 +105,8 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 
 %changelog
+* Sun Apr  8 2018 Philippe Kueck <projects@unixadm.org> - 1.0.1-1
+- bump to 1.0.1
+
 * Fri Mar  9 2018 Philippe Kueck <projects@unixadm.org> - 1.0.0-0.1
 - initial packaging
