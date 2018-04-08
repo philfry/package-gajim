@@ -38,9 +38,8 @@ Requires: telepathy-farstream >= 0.2
 Requires: gstreamer
 Requires: gstreamer-plugins-base
 Requires: gupnp
-# welcher von beiden?
-Requires: NetworkManager-glib
-Requires: NetworkManager-libnm
+#Requires: NetworkManager-glib
+#Requires: NetworkManager-libnm
 Requires: geoclue2-libs
 Requires: python3-idna
 Requires: python3-precis_i18n
@@ -89,7 +88,6 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 %defattr(-,root,root,-)
 %{!?_licensedir:%global license %%doc}
 %license COPYING
-%doc ChangeLog
 %{_bindir}/%{name}
 %{_bindir}/%{name}-history-manager
 %{_bindir}/%{name}-remote
@@ -107,6 +105,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 %changelog
 * Sun Apr  8 2018 Philippe Kueck <projects@unixadm.org> - 1.0.1-1
 - bump to 1.0.1
+
+* Fri Mar 23 2018 Philippe Kueck <projects@unixadm.org> - 1.0.0-1
+- bump to 1.0.0
 
 * Fri Mar  9 2018 Philippe Kueck <projects@unixadm.org> - 1.0.0-0.1
 - initial packaging
