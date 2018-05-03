@@ -22,7 +22,7 @@ Requires: python3 >= 3.4
 Requires: python3-gobject-base
 Requires: python3-gobject
 Requires: gtk3
-Requires: python3-nbxmpp >= 0.6.3
+Requires: python3-nbxmpp >= 0.6.5
 Requires: python3-pyOpenSSL >= 0.14
 Requires: python3-pyasn1
 Requires: python3-pillow
