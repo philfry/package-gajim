@@ -1,5 +1,5 @@
 Name: gajim
-Version: 1.0.1
+Version: 1.0.2
 Release: 1%{?dist}
 Summary: a jabber/xmpp client
 Group: Applications/Internet
@@ -103,6 +103,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 
 %changelog
+* Thu May  3 2018 Philippe Kueck <projects@unixadm.org> - 1.0.2-1
+- bump to 1.0.2
+
 * Sun Apr  8 2018 Philippe Kueck <projects@unixadm.org> - 1.0.1-1
 - bump to 1.0.1
 
