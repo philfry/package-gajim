@@ -1,5 +1,5 @@
 Name: gajim
-Version: 1.0.2
+Version: 1.0.3
 Release: 1%{?dist}
 Summary: a jabber/xmpp client
 Group: Applications/Internet
@@ -22,7 +22,7 @@ Requires: python3 >= 3.4
 Requires: python3-gobject-base
 Requires: python3-gobject
 Requires: gtk3
-Requires: python3-nbxmpp >= 0.6.5
+Requires: python3-nbxmpp >= 0.6.6
 Requires: python3-pyOpenSSL >= 0.14
 Requires: python3-pyasn1
 Requires: python3-pillow
@@ -103,6 +103,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 
 %changelog
+* Tue May 22 2018 Philippe Kueck <projects@unixadm.org> - 1.0.3-1
+- bump to 1.0.3
+
 * Thu May  3 2018 Philippe Kueck <projects@unixadm.org> - 1.0.2-1
 - bump to 1.0.2
 
