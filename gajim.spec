@@ -5,7 +5,7 @@ Summary: a jabber/xmpp client
 Group: Applications/Internet
 License: GPLv3
 URL: https://gajim.org/
-Source0: https://gajim.org/downloads/1.0/%{name}-%{version}.tar.bz2
+Source0: https://gajim.org/downloads/%(echo %{version}|cut -d. -f1,2)/%{name}-%{version}.tar.bz2
 BuildArch: noarch
 BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
@@ -24,12 +24,12 @@ Requires: python3-gobject
 Requires: gtk3
 Requires: python3-nbxmpp >= 0.6.8
 Requires: python3-pyOpenSSL >= 0.14
-Requires: python3-pyasn1
+Requires: python3-cssutils >= 1.0.2
+Requires: python3-keyring
 Requires: python3-pillow
 Requires: python3-crypto
 Requires: python3-gnupg
 Requires: dbus-glib
-Requires: python-avahi
 Requires: gspell
 Requires: hunspell
 Requires: libsecret
